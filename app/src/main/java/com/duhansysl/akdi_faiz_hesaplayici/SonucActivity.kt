@@ -18,17 +18,26 @@ class SonucActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Veriyi diğer aktiviteden inten sayesinde alma
-        val toplamGun = intent.getFloatExtra("toplamGun", 0.0f)
-        val toplamBorc = intent.getFloatExtra("toplamBorc", 0.0f)
-        val asgariOdemeMiktari = intent.getFloatExtra("asgariOdemeMiktari", 0.0f)
-        val odenenBocMiktari = intent.getFloatExtra("odenenBocMiktari", 0.0f)
-        val kalanBorcMiktari = intent.getFloatExtra("kalanBorcMiktari", 0.0f)
-        val kalanAsgariBorcMiktari = intent.getFloatExtra("kalanAsgariBorcMiktari", 0.0f)
-        val alisverisFaizBirinci = intent.getFloatExtra("alisverisFaizBirinci", 0.0f)
-        val alisverisFaizIkinci = intent.getFloatExtra("alisverisFaizIkinci", 0.0f)
-        val toplamFaizTutari = intent.getFloatExtra("toplamFaizTutari", 0.0f)
-        val vergiTutari = intent.getFloatExtra("vergiTutari", 0.0f)
-        val toplamMaliyet = intent.getFloatExtra("toplamMaliyet", 0.0f)
+        val toplamGun = intent.getIntExtra("toplamGun", 0)
+        val toplamBorc = intent.getDoubleExtra("toplamBorc", 0.0)
+        val asgariOdemeMiktari = intent.getDoubleExtra("asgariOdemeMiktari", 0.0)
+        val odenenBorcMiktari = intent.getDoubleExtra("odenenBorcMiktari", 0.0)
+        val kalanBorcMiktari = intent.getDoubleExtra("kalanBorcMiktari", 0.0)
+        var kalanAsgariBorcMiktari = intent.getDoubleExtra("kalanAsgariBorcMiktari", 0.0)
+        val alisverisFaizBirinci = intent.getDoubleExtra("alisverisFaizBirinci", 0.0)
+        val alisverisFaizIkinci = intent.getDoubleExtra("alisverisFaizIkinci", 0.0)
+        val toplamFaizTutari = intent.getDoubleExtra("toplamFaizTutari", 0.0)
+        val vergiTutari = intent.getDoubleExtra("vergiTutari", 0.0)
+        val toplamMaliyet = intent.getDoubleExtra("toplamMaliyet", 0.0)
+        val vergiOrani = intent.getDoubleExtra("vergiOrani", 0.0)
+        val faizOrani = intent.getDoubleExtra("faizOrani", 0.0)
+        val cezaFaizOrani = intent.getDoubleExtra("cezaFaizOrani", 0.0)
+        val gecikmeFaizTutari = intent.getDoubleExtra("gecikmeFaizTutari", 0.0)
+        val asgariOran = intent.getDoubleExtra("asgariOran", 0.0)
+
+        if(kalanAsgariBorcMiktari < 0.0) {
+            kalanAsgariBorcMiktari = 0.0
+        }
 
         // Gelen verileri ViewBinding ile gösterme
         // binding.textView.text = "Received Float: $receivedFloat\nReceived String: $receivedString"

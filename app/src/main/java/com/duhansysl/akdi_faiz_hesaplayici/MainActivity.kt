@@ -138,3 +138,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+* initial user interface, will be updated by the time
+* stringBuilder function is important !!
+
+set-up user interface
