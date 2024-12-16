@@ -101,6 +101,18 @@ class MainActivity : AppCompatActivity() {
                 geriyeKalanBorc = 0.0
             }
 
+            // Sonuçları Yazdır
+//            println("Asgari Tutar: $asgariTutar")
+//            println("Geriye Kalan Borç: $geriyeKalanBorc")
+//            println("Geriye Kalan Asgari Borç: $geriyeKalanAsgariBorc")
+//            println("Alışveriş Faizi Birinci: $alisverisFaiziBirinci")
+//            println("Gecikme Faizi: $gecikmeFaizi")
+//            println("Alışveriş Faizi İkinci: $alisverisFaiziIkinci")
+//            println("Toplam Faiz: $toplamFaiz")
+//            println("Vergi Tutarı: $vergiTutari")
+//            println("Toplam Maliyet: $toplamMaliyet")
+//            println("Toplam Gün: $toplamGun")
+
             intent.putExtra("toplamGun", toplamGun)
             intent.putExtra("toplamBorc", borc)
             intent.putExtra("asgariOdemeMiktari", asgariTutar)
