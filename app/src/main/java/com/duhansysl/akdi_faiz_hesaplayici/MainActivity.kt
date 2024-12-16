@@ -40,6 +40,25 @@ class MainActivity : AppCompatActivity() {
             val odenen = binding.odenenPlainText.text.toString().toDoubleOrNull() ?: 0.0
             val odemeGun = binding.hesapKesimSonOdemeGun.text.toString().toIntOrNull() ?: 0
             val gecikmeGun = binding.gecikenGunPlain.text.toString().toIntOrNull() ?: 0
+
+            var akdiFaiz: Double = 0.00
+            var gecikmeFaiz: Double = 0.00
+            var asgariOdemeOrani: Double = 0.00
+            var toplamBorc: Double = borc
+
+            if (limit <= 25000) {
+                akdiFaiz = akdiFaizOraniKucuk
+                gecikmeFaiz = gecikmeFaizOraniKucuk
+                asgariOdemeOrani = asgariOdemeOraniKucuk
+            } else if (limit <= 150000) {
+                akdiFaiz = akdiFaizOraniOrta
+                gecikmeFaiz = gecikmeFaizOraniOrta
+                asgariOdemeOrani = asgariOdemeOraniBuyuk
+            } else {
+                akdiFaiz = akdiFaizOraniBuyuk
+                gecikmeFaiz = gecikmeFaizOraniBuyuk
+                asgariOdemeOrani = asgariOdemeOraniBuyuk
+            }
         }
     }
 }
