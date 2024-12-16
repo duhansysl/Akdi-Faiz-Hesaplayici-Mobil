@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.duhansysl.akdi_faiz_hesaplayici"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.duhansysl.akdi_faiz_hesaplayici"
@@ -32,6 +32,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
