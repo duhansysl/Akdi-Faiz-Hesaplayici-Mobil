@@ -7,13 +7,98 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/buttonLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/veriLayout">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:onClick="sil"
+            android:text="Sil" />
+
+        <Button
+            android:id="@+id/buttonCalculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:onClick="hesapla"
+            android:text="Hesapla" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/veriLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:gravity="top"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/limitPlainText"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:hint="Kredi Kartı Limitinizi Girin"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/borcPlainText"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:hint="Borcunuzu Girin"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/odenenPlainText"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:hint="Ödenen Miktarı Girin"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/hesapKesimSonOdemeGun"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:hint="Hesap Kesim-Son Ödeme Gün"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/gecikenGunPlain"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:hint="Geciken Gün"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
