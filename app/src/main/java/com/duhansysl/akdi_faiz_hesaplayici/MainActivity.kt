@@ -100,6 +100,8 @@ class MainActivity : AppCompatActivity() {
             // Eğer Ödenen Miktar Toplam Borçtan Fazlaysa
             if (odenen >= toplamBorc) {
                 geriyeKalanBorc = 0.0
+                alisverisFaiziBirinci = 0.0
+                alisverisFaiziIkinci = 0.0
             }
 
             // Sonuçları Yazdır
