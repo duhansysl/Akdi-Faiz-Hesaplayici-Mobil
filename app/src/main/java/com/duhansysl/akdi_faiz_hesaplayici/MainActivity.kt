@@ -34,6 +34,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonCalculate.setOnClickListener() {
+
+            val limit = binding.limitPlainText.text.toString().toDoubleOrNull() ?: 0.0
+            val borc = binding.borcPlainText.text.toString().toDoubleOrNull() ?: 0.0
+            val odenen = binding.odenenPlainText.text.toString().toDoubleOrNull() ?: 0.0
+            val odemeGun = binding.hesapKesimSonOdemeGun.text.toString().toIntOrNull() ?: 0
+            val gecikmeGun = binding.gecikenGunPlain.text.toString().toIntOrNull() ?: 0
         }
     }
 }
