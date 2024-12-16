@@ -59,6 +59,44 @@ class MainActivity : AppCompatActivity() {
                 gecikmeFaiz = gecikmeFaizOraniBuyuk
                 asgariOdemeOrani = asgariOdemeOraniBuyuk
             }
+
+            // HESAPLAMALAR
+
+            // Toplam Gün
+            val toplamGun = odemeGun + gecikmeGun
+
+            // Asgari Tutar Hesabı
+            val asgariTutar = toplamBorc * (asgariOdemeOrani / 100)
+
+            // Geriye Kalan Borç
+            var geriyeKalanBorc = (toplamBorc - odenen).coerceAtLeast(0.00)
+
+            // Geriye Kalan Asgari Borç
+            val geriyeKalanAsgariBorc = asgariTutar - odenen
+
+            // Alışveriş Faizi ve Gecikme Faizi (Hesap Kesim ile Son Ödeme Tarihi Arası)
+            val alisverisFaiziBirinci = (geriyeKalanBorc * akdiFaiz / 100) * (odemeGun / 30.0)
+            val alisverisFaiziIkinci = (geriyeKalanBorc * akdiFaiz / 100) * (gecikmeGun / 30.0)
+
+            val gecikmeFaizi = if (odenen < asgariTutar) {
+                (geriyeKalanAsgariBorc * gecikmeFaiz / 100) * (gecikmeGun / 30.0)
+            } else {
+                0.0
+            }
+
+            // Toplam Faiz
+            val toplamFaiz = alisverisFaiziBirinci + alisverisFaiziIkinci + gecikmeFaizi
+
+            // Vergi Tutarı
+            val vergiTutari = (toplamFaiz * vergiOrani / 100)
+
+            // Toplam Maliyet
+            val toplamMaliyet = toplamFaiz + vergiTutari
+
+            // Eğer Ödenen Miktar Toplam Borçtan Fazlaysa
+            if (odenen >= toplamBorc) {
+                geriyeKalanBorc = 0.0
+            }
         }
     }
 }
