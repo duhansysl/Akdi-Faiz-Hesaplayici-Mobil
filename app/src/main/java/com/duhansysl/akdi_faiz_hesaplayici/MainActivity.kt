@@ -125,8 +125,13 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("alisverisFaizBirinci", alisverisFaiziBirinci)
             intent.putExtra("alisverisFaizIkinci", alisverisFaiziIkinci)
             intent.putExtra("toplamFaizTutari", toplamFaiz)
+            intent.putExtra("gecikmeFaizTutari", gecikmeFaizTutari)
             intent.putExtra("vergiTutari", vergiTutari)
             intent.putExtra("toplamMaliyet", toplamMaliyet)
+            intent.putExtra("vergiOrani", vergiOrani)
+            intent.putExtra("faizOrani", akdiFaiz)
+            intent.putExtra("cezaFaizOrani", gecikmeFaiz)
+            intent.putExtra("asgariOran", asgariOdemeOrani)
 
             // 2. Aktiviteyi başlat (SonucActivity)
             startActivity(intent)
