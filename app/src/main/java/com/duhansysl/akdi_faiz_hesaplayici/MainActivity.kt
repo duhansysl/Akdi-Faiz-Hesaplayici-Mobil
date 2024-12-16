@@ -1,5 +1,6 @@
 package com.duhansysl.akdi_faiz_hesaplayici
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonCalculate.setOnClickListener() {
+
+            val intent = Intent(this, SonucActivity::class.java)
 
             val limit = binding.limitPlainText.text.toString().toDoubleOrNull() ?: 0.0
             val borc = binding.borcPlainText.text.toString().toDoubleOrNull() ?: 0.0
@@ -97,6 +100,21 @@ class MainActivity : AppCompatActivity() {
             if (odenen >= toplamBorc) {
                 geriyeKalanBorc = 0.0
             }
+
+            intent.putExtra("toplamGun", toplamGun)
+            intent.putExtra("toplamBorc", borc)
+            intent.putExtra("asgariOdemeMiktari", asgariTutar)
+            intent.putExtra("odenenBorcMiktari", odenen)
+            intent.putExtra("kalanBorcMiktari", geriyeKalanBorc)
+            intent.putExtra("kalanAsgariBorcMiktari", geriyeKalanAsgariBorc)
+            intent.putExtra("alisverisFaizBirinci", alisverisFaiziBirinci)
+            intent.putExtra("alisverisFaizIkinci", alisverisFaiziIkinci)
+            intent.putExtra("toplamFaizTutari", toplamFaiz)
+            intent.putExtra("vergiTutari", vergiTutari)
+            intent.putExtra("toplamMaliyet", toplamMaliyet)
+
+            // 2. Aktiviteyi başlat (SonucActivity)
+            startActivity(intent)
         }
     }
 }
