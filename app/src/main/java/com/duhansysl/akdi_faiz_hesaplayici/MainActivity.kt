@@ -52,14 +52,17 @@ class MainActivity : AppCompatActivity() {
             if (limit <= 25000) {
                 akdiFaiz = akdiFaizOraniKucuk
                 gecikmeFaiz = gecikmeFaizOraniKucuk
-                asgariOdemeOrani = asgariOdemeOraniKucuk
             } else if (limit <= 150000) {
                 akdiFaiz = akdiFaizOraniOrta
                 gecikmeFaiz = gecikmeFaizOraniOrta
-                asgariOdemeOrani = asgariOdemeOraniBuyuk
             } else {
                 akdiFaiz = akdiFaizOraniBuyuk
                 gecikmeFaiz = gecikmeFaizOraniBuyuk
+            }
+
+            if (limit <= 50000) {
+                asgariOdemeOrani = asgariOdemeOraniKucuk
+            } else {
                 asgariOdemeOrani = asgariOdemeOraniBuyuk
             }
 
