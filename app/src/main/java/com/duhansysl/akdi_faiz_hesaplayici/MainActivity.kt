@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             // Toplam Faiz
-            val toplamFaiz = alisverisFaiziBirinci + alisverisFaiziIkinci + gecikmeFaiz
+            val toplamFaiz = alisverisFaiziBirinci + alisverisFaiziIkinci + gecikmeFaizTutari
 
             // Vergi Tutarı
             val vergiTutari = (toplamFaiz * vergiOrani / 100)
